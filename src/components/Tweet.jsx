@@ -4,7 +4,6 @@ import Comment from "../icons/ui/twitter-reply-outline.svg";
 import Bookmark from "../icons/bookmark.svg";
 import BookmarkFill from "../icons/bookmark-filled.svg";
 import DeleteIcon from "../icons/delete.svg";
-import Users from "../dB/users";
 import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Oval } from "react-loader-spinner";
@@ -14,7 +13,7 @@ import { toast } from "react-hot-toast";
 
 function Tweet() {
   const [isLoading, setIsLoading] = useState(true);
-  const { user } = useAuth();
+  const { user, allUsers } = useAuth();
   const { tweets, markBookmark, likeTweet, deleteTweet } = useTweets();
 
   useEffect(() => {
@@ -50,7 +49,7 @@ function Tweet() {
     <div>
       {!isLoading &&
         tweets.map((t) => {
-          const tweetUser = Users.find((u) => t.userId === u.id);
+          const tweetUser = allUsers.find((u) => t.userId === u.id);
           const profilePic = "/profile-pictures/" + tweetUser.profilePic;
 
           return (
