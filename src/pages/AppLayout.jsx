@@ -1,6 +1,8 @@
 import { useState } from "react";
-import Home from "../pages/Home";
 import SideMenu from "../components/SideMenu";
+import Header from "../components/Header";
+import Tweet from "../components/Tweet";
+import CreateTweet from "../components/CreateTweet";
 
 function AppLayout() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -17,10 +19,15 @@ function AppLayout() {
         </div>
       )}
 
-      <Home
-        onHamburgerClick={handleHamburgerClick}
-        isSideMenuOpen={isSideMenuOpen}
-      />
+      <div
+        className={`h-screen ${
+          isSideMenuOpen ? "overflow-hidden blur-[2px]" : "overflow-auto"
+        }`}
+      >
+        <Header onHamburgerClick={handleHamburgerClick} />
+        <CreateTweet />
+        <Tweet />
+      </div>
     </>
   );
 }
