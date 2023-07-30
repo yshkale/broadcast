@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useCallback } from "react";
 import { InitialTweets } from "../dB/tweets";
 
 const TweetContext = createContext();
@@ -6,24 +6,27 @@ const TweetContext = createContext();
 export function TweetProvider({ children }) {
   const [tweets, setTweets] = useState(InitialTweets);
 
-  function addTweet(newTweet) {
+  const addTweet = useCallback((newTweet) => {
     setTweets((prevTweets) => [newTweet, ...prevTweets]);
-  }
+  }, []);
 
-  function deleteTweet(tweetId) {
-    const updatedTweets = tweets.filter((t) => t.id !== tweetId);
-    setTweets(updatedTweets);
-  }
+  const deleteTweet = useCallback(
+    (tweetId) => {
+      const updatedTweets = tweets.filter((t) => t.id !== tweetId);
+      setTweets(updatedTweets);
+    },
+    [tweets]
+  );
 
-  function markBookmark(tweetId) {
+  const markBookmark = useCallback((tweetId) => {
     setTweets((prevTweets) => {
       return prevTweets.map((t) => {
         return t.id === tweetId ? { ...t, bookmark: !t.bookmark } : t;
       });
     });
-  }
+  }, []);
 
-  function likeTweet(tweetId) {
+  const likeTweet = useCallback((tweetId) => {
     setTweets((prevTweets) => {
       return prevTweets.map((t) =>
         t.id === tweetId
@@ -35,17 +38,17 @@ export function TweetProvider({ children }) {
           : t
       );
     });
-  }
+  }, []);
 
-  function addComment(tweetId, newComment) {
+  const addComment = useCallback((tweetId, newComment) => {
     setTweets((prevTweets) => {
       return prevTweets.map((t) =>
         t.id === tweetId ? { ...t, comments: [newComment, ...t.comments] } : t
       );
     });
-  }
+  }, []);
 
-  function addCommentLike(commentId) {
+  const addCommentLike = useCallback((commentId) => {
     setTweets((prevTweets) => {
       return prevTweets.map((t) => ({
         ...t,
@@ -60,9 +63,9 @@ export function TweetProvider({ children }) {
         ),
       }));
     });
-  }
+  }, []);
 
-  function deleteComment(tweetId, commentId) {
+  const deleteComment = useCallback((tweetId, commentId) => {
     setTweets((prevTweets) => {
       return prevTweets.map((t) =>
         t.id === tweetId
@@ -73,7 +76,7 @@ export function TweetProvider({ children }) {
           : t
       );
     });
-  }
+  }, []);
 
   return (
     <TweetContext.Provider
