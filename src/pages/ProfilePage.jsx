@@ -40,8 +40,7 @@ function ProfilePage() {
     (t) => t.userId === parseInt(userId)
   );
 
-  const userPicture =
-    "/src/images/profile-pictures/" + currentProfile.profilePic;
+  const userPicture = "/profile-pictures/" + currentProfile.profilePic;
 
   return (
     <>

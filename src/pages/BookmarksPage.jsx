@@ -43,8 +43,7 @@ function BookmarksPage() {
         {bookmarkedTweets.length >= 1 &&
           bookmarkedTweets.map((t) => {
             const tweetUser = Users.find((u) => t.userId === u.id);
-            const profilePic =
-              "src/images/profile-pictures/" + tweetUser.profilePic;
+            const profilePic = "/profile-pictures/" + tweetUser.profilePic;
             return (
               <div
                 key={t.id}

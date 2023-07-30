@@ -6,7 +6,6 @@ import Comment from "../icons/ui/twitter-reply-outline.svg";
 import Bookmark from "../icons/bookmark.svg";
 import BookmarkFill from "../icons/bookmark-filled.svg";
 import DeleteIcon from "../icons/delete.svg";
-import ProfilePic from "../images/profile-pictures/yshkale.webp";
 import { useState, useRef } from "react";
 import Users from "../dB/users";
 import { useAuth } from "../contexts/AuthContext";
@@ -36,11 +35,13 @@ function TweetPage() {
     isLiked: false,
   });
 
+  const ProfilePic = `/profile-pictures/${user && user.profilePic}`;
+
   const currentTweet = tweets.find((t) => t.id === parseInt(tweetId));
 
   const tweetAuthor = Users.find((u) => u.id === parseInt(currentTweet.userId));
 
-  const tweetAuthorProfilePic = `/src/images/profile-pictures/${tweetAuthor.profilePic}`;
+  const tweetAuthorProfilePic = `/profile-pictures/${tweetAuthor.profilePic}`;
 
   function handleComment(e) {
     const value = e.target.value;
@@ -180,7 +181,7 @@ function TweetPage() {
 
         {currentTweet.comments.map((c) => {
           const tweetUser = Users.find((u) => u.id === c.userId);
-          const userPic = `/src/images/profile-pictures/${tweetUser.profilePic}`;
+          const userPic = `/profile-pictures/${tweetUser.profilePic}`;
 
           return (
             <div

@@ -51,8 +51,7 @@ function Tweet() {
       {!isLoading &&
         tweets.map((t) => {
           const tweetUser = Users.find((u) => t.userId === u.id);
-          const profilePic =
-            "src/images/profile-pictures/" + tweetUser.profilePic;
+          const profilePic = "/profile-pictures/" + tweetUser.profilePic;
 
           return (
             <div

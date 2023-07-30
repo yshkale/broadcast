@@ -39,7 +39,7 @@ function ProfilePage() {
 
   const userPicture =
     user && user.profilePic
-      ? `/src/images/profile-pictures/${user.profilePic}`
+      ? `/profile-pictures/${user.profilePic}`
       : localStorage.getItem("profilePic");
 
   function handleDeleteTweet(tweetId) {

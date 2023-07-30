@@ -66,7 +66,7 @@ function FollowersFollowings() {
       {loadFollowers &&
         currentUser.followers.map((followerId) => {
           const follower = allUsers.find((u) => u.id === followerId);
-          const followerPic = `/src/images/profile-pictures/${follower.profilePic}`;
+          const followerPic = `/profile-pictures/${follower.profilePic}`;
 
           return (
             <div key={follower.id} className="px-4 py-4">
@@ -101,7 +101,7 @@ function FollowersFollowings() {
       {!loadFollowers &&
         currentUser.following.map((followingId) => {
           const followingUser = allUsers.find((u) => u.id === followingId);
-          const followerPic = `/src/images/profile-pictures/${followingUser.profilePic}`;
+          const followerPic = `/profile-pictures/${followingUser.profilePic}`;
 
           return (
             <div key={followingUser.id} className="px-4 py-4">

@@ -9,7 +9,7 @@ function SideMenu({ closeSideMenu }) {
   const { user, logout } = useAuth();
   const userProfilePic =
     user && user.profilePic
-      ? `/src/images/profile-pictures/${user.profilePic}`
+      ? `/profile-pictures/${user.profilePic}`
       : localStorage.getItem("profilePic");
 
   return (
