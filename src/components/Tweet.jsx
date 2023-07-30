@@ -18,7 +18,7 @@ function Tweet() {
   const { tweets, markBookmark, likeTweet, deleteTweet } = useTweets();
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 1000);
+    const timer = setTimeout(() => setIsLoading(false), 3000);
 
     return () => clearTimeout(timer);
   }, []);
