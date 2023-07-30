@@ -29,11 +29,11 @@ function Login() {
 
   return (
     <>
-      <div className="flex justify-center pt-2 pb-4">
-        <h1 className="text-4xl font-medium ">b.</h1>
+      <div className="flex justify-center pt-2 pb-4 lg:pt-4 lg:pb-4">
+        <h1 className="text-4xl font-medium lg:text-5xl">b.</h1>
       </div>
 
-      <div className="px-8 py-10">
+      <div className="px-8 py-12 lg:w-4/12 lg:mx-96 lg:my-20">
         <h2 className="text-3xl tracking-wide font-bold text-stone-100">
           Sign in to broadcast.
         </h2>
@@ -60,7 +60,7 @@ function Login() {
 
           <button
             type="primary"
-            className="rounded-full bg-white text-black font-semibold w-full p-2 my-4"
+            className="h-12 rounded-full bg-white text-black font-semibold w-full p-2 my-4 hover:bg-black hover:text-stone-50 hover:border hover:border-stone-700 transition-all"
           >
             Log In
           </button>

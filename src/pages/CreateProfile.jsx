@@ -62,8 +62,8 @@ function CreateProfile() {
   );
 
   return (
-    <>
-      <div className="px-8 pt-4">
+    <div className="lg:mx-96 lg:my-28 lg:max-w-2xl">
+      <div className="px-8 pt-4 ">
         <h1 className="text-base font-medium ">Step 2 of 2</h1>
       </div>
 
@@ -104,26 +104,26 @@ function CreateProfile() {
             required
           />
 
-          <div className="mt-2">
-            <label className=" text-stone-400 text-sm">
+          <div className="mt-2 ">
+            <label className=" text-stone-400 text-sm ">
               Choose a profile picture
               <input
                 type="file"
                 accept=".png, .jpg, .jpeg"
                 name="profilePic"
-                className="my-2 w-full text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
+                className=" my-2 w-full text-sm text-stone-500 file:mr-4 file:py-2 file:px-4 file:rounded-full file:border-0 file:text-sm file:font-semibold file:bg-purple-50 file:text-purple-700 hover:file:bg-purple-100"
                 onChange={handleChange}
                 required
               />
             </label>
           </div>
 
-          <button className="rounded-full bg-white text-black font-semibold w-full p-2 mt-8">
+          <button className="h-12 rounded-full bg-white text-black font-semibold w-full p-2 mt-8  hover:bg-black hover:text-stone-50 hover:border hover:border-stone-700 transition-all">
             Finish
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

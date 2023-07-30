@@ -55,9 +55,9 @@ function Signup() {
   const navigate = useNavigate();
 
   return (
-    <>
+    <div className="lg:mx-96 lg:my-28 lg:max-w-2xl">
       <div className="px-8 pt-4">
-        <h1 className="text-base font-medium ">Step 1 of 2</h1>
+        <h1 className="text-base font-medium lg:text-lg">Step 1 of 2</h1>
       </div>
 
       <div className="px-8 mt-8">
@@ -106,12 +106,12 @@ function Signup() {
             required
           />
 
-          <button className="rounded-full bg-white text-center text-black font-semibold w-full p-2 mt-4">
+          <button className="h-12 rounded-full bg-white text-center text-black font-semibold w-full p-2 mt-4  hover:bg-black hover:text-stone-50 hover:border hover:border-stone-700 transition-all">
             Next
           </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 
