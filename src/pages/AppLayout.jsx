@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
 import Tweet from "../components/Tweet";
 import CreateTweet from "../components/CreateTweet";
+
+const MemoizedTweet = memo(Tweet);
+const MemoizedCreateTweet = memo(CreateTweet);
 
 function AppLayout() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -12,9 +15,9 @@ function AppLayout() {
   };
 
   return (
-    <>
+    <div className="lg:mx-[28rem]">
       {isSideMenuOpen && (
-        <div className="fixed inset-y-0 left-0 z-40">
+        <div className="fixed inset-y-0 left-0 z-40 lg:display-none">
           <SideMenu closeSideMenu={() => setIsSideMenuOpen(false)} />
         </div>
       )}
@@ -25,10 +28,10 @@ function AppLayout() {
         }`}
       >
         <Header onHamburgerClick={handleHamburgerClick} />
-        <CreateTweet />
-        <Tweet />
+        <MemoizedCreateTweet />
+        <MemoizedTweet />
       </div>
-    </>
+    </div>
   );
 }
 

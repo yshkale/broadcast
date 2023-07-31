@@ -12,10 +12,10 @@ function FollowersFollowings() {
   const [loadFollowers, setLoadFollowers] = useState(true);
 
   return (
-    <div>
-      <div className="flex gap-8 px-6 py-2 items-center border-b border-stone-700">
+    <div className="lg:max-w-4xl lg:mx-[28rem]">
+      <div className="flex gap-8 px-6 py-2 items-center border-b border-stone-700 lg:py-4">
         <img
-          className="w-5 h-5 invert"
+          className="w-5 h-5 invert cursor-pointer"
           src={ArrowLeft}
           alt="Back arrow"
           onClick={() => navigate(-1)}
@@ -32,15 +32,15 @@ function FollowersFollowings() {
 
       <div className="flex justify-evenly items-center border-b border-stone-700">
         <p
-          className={`px-2 py-4 ${
-            loadFollowers && "border-b-2 border-purple-700"
+          className={`cursor-pointer px-2 py-4 ${
+            loadFollowers && "border-b-2 border-purple-700 "
           }`}
           onClick={() => setLoadFollowers(true)}
         >
           Followers
         </p>
         <p
-          className={`px-2 py-4 ${
+          className={`cursor-pointer px-2 py-4 ${
             !loadFollowers && "border-b-2 border-purple-700"
           }`}
           onClick={() => setLoadFollowers(false)}
@@ -69,7 +69,7 @@ function FollowersFollowings() {
           const followerPic = `/profile-pictures/${follower.profilePic}`;
 
           return (
-            <div key={follower.id} className="px-4 py-4">
+            <div key={follower.id} className="px-4 py-4 lg:py-6">
               <Link
                 to={
                   user && follower.id === user.id
@@ -104,7 +104,7 @@ function FollowersFollowings() {
           const followerPic = `/profile-pictures/${followingUser.profilePic}`;
 
           return (
-            <div key={followingUser.id} className="px-4 py-4">
+            <div key={followingUser.id} className="px-4 py-4 lg:py-6">
               <Link
                 to={
                   user && followingUser.id === user.id

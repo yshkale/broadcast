@@ -92,7 +92,7 @@ function CreateTweet() {
 
   return (
     <>
-      <div className="flex px-4 pt-4 pb-2 border-b border-stone-800">
+      <div className="flex px-4 pt-4 pb-2 border-b border-stone-800 lg:border-l lg:border-stone-700 lg:max-w-4xl">
         <img
           src={userProfilePic}
           className="w-10 h-10 object-cover rounded-full"

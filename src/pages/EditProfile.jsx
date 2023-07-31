@@ -55,10 +55,10 @@ function EditProfile() {
   }
 
   return (
-    <div>
-      <div className="flex gap-8 px-6 py-3 items-center border-b border-stone-700">
+    <div className="lg:max-w-4xl lg:mx-[28rem]">
+      <div className="flex gap-8 px-6 py-3 items-center border-b border-stone-700 lg:py-6">
         <img
-          className="w-5 h-5 invert"
+          className="w-5 h-5 invert cursor-pointer"
           src={ArrowLeft}
           alt="Back arrow"
           onClick={() => navigate(-1)}
@@ -123,7 +123,7 @@ function EditProfile() {
           onChange={(e) => handleChange(e)}
         />
 
-        <p className="text-stone-500 text-xs ">
+        <p className="text-stone-500 text-xs lg:text-sm lg:mt-4">
           Fill in the form fields above to update your profile information. Your
           changes will be saved once you click the Save button.
         </p>

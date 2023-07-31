@@ -13,11 +13,13 @@ function SideMenu({ closeSideMenu }) {
       : localStorage.getItem("profilePic");
 
   return (
-    <div className="w-10/12 fixed inset-y-0 left-0 border-r border-stone-700 bg-black px-4 pt-4 pb-6 z-50">
+    <div className="w-10/12 fixed inset-y-0 left-0 border-r border-stone-700 bg-black px-4 pt-4 pb-6 z-50 lg:w-3/12 lg:pl-12 lg:pt-10">
       <div className="flex justify-between">
-        <h2>Account info</h2>
+        <h2 className="lg:text-md lg:font-semibold lg:tracking-wide">
+          Account info
+        </h2>
         <img
-          className="w-4 invert"
+          className="w-4 invert cursor-pointer"
           src={closeIcon}
           onClick={closeSideMenu}
           alt="close icon"
@@ -63,7 +65,10 @@ function SideMenu({ closeSideMenu }) {
             <img className="w-4" src={BookmarkIcon} alt="profile icon" />
             <p className="font-bold tracking-wide text-lg ">Bookmarks</p>
           </NavLink>
-          <div className="flex gap-8 items-center" onClick={logout}>
+          <div
+            className="flex gap-8 items-center cursor-pointer"
+            onClick={logout}
+          >
             <img className="w-5 invert" src={LogoutIcon} alt="profile icon" />
             <p className="font-bold tracking-wide text-lg ">Logout</p>
           </div>

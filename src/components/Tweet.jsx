@@ -46,7 +46,7 @@ function Tweet() {
   }
 
   return (
-    <div>
+    <div className="lg:border-x lg:border-stone-700 lg:max-w-4xl">
       {!isLoading &&
         tweets.map((t) => {
           const tweetUser = allUsers.find((u) => t.userId === u.id);
@@ -72,7 +72,7 @@ function Tweet() {
                 />
               </Link>
 
-              <div className="flex flex-col gap-1">
+              <div className="flex flex-col gap-1 flex-1">
                 <div className="flex gap-2 items-center">
                   <h3 className="text-sm font-semibold">{tweetUser.name}</h3>
                   <p className="text-xs text-stone-500">
@@ -91,7 +91,7 @@ function Tweet() {
                   <div className="flex items-center gap-2">
                     <img
                       src={t.isLiked ? LikeFill : Like}
-                      className="w-4 h-4"
+                      className="w-4 h-4 cursor-pointer"
                       alt="like"
                       onClick={() => likeTweet(t.id)}
                     />
@@ -107,7 +107,7 @@ function Tweet() {
 
                   {user && user.id === tweetUser.id && (
                     <img
-                      className="w-[1.1rem] invert mr-auto"
+                      className="w-[1.1rem] invert mr-auto cursor-pointer"
                       src={DeleteIcon}
                       alt="more icon"
                       onClick={() => handleDeleteTweet(t.id)}
@@ -116,7 +116,7 @@ function Tweet() {
 
                   <img
                     src={t.bookmark ? BookmarkFill : Bookmark}
-                    className="w-[0.9rem] h-[0.9rem] ml-auto mr-2"
+                    className="w-[0.9rem] h-[0.9rem] ml-auto mr-2 cursor-pointer"
                     alt="bookmark"
                     onClick={() => markBookmark(t.id)}
                   />
