@@ -1,11 +1,8 @@
-import { useState, memo } from "react";
+import { useState } from "react";
 import SideMenu from "../components/SideMenu";
 import Header from "../components/Header";
 import Tweet from "../components/Tweet";
 import CreateTweet from "../components/CreateTweet";
-
-const MemoizedTweet = memo(Tweet);
-const MemoizedCreateTweet = memo(CreateTweet);
 
 function AppLayout() {
   const [isSideMenuOpen, setIsSideMenuOpen] = useState(false);
@@ -28,8 +25,8 @@ function AppLayout() {
         }`}
       >
         <Header onHamburgerClick={handleHamburgerClick} />
-        <MemoizedCreateTweet />
-        <MemoizedTweet />
+        <CreateTweet />
+        <Tweet />
       </div>
     </div>
   );

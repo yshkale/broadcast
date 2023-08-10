@@ -3,6 +3,7 @@ import Like from "../icons/ui/twitter-like-outline.svg";
 import LikeFill from "../icons/twitter-like-filled.svg";
 import Comment from "../icons/ui/twitter-reply-outline.svg";
 import Bookmark from "../icons/bookmark.svg";
+import BookmarkFill from "../icons/bookmark-filled.svg";
 import ArrowLeft from "../icons/arrow-left.svg";
 import BannerImg from "../images/banner-images/banner1.webp";
 import Location from "../icons/twitter-location.svg";
@@ -15,7 +16,7 @@ import { useAuth } from "../contexts/AuthContext";
 
 function ProfilePage() {
   const { user, follow, unfollow } = useAuth();
-  const { tweets, likeTweet } = useTweets();
+  const { tweets, likeTweet, markBookmark } = useTweets();
 
   const months = [
     "January",
@@ -206,9 +207,13 @@ function ProfilePage() {
                 </div>
 
                 <img
-                  src={Bookmark}
+                  src={t.bookmark ? BookmarkFill : Bookmark}
                   className="w-[0.9rem] h-[0.9rem] mr-2"
                   alt="bookmark"
+                  onClick={() => {
+                    markBookmark(t.id);
+                    console.log("test");
+                  }}
                 />
               </div>
             </div>
