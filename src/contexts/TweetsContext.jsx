@@ -1,4 +1,10 @@
-import { createContext, useContext, useState, useCallback } from "react";
+import {
+  createContext,
+  useContext,
+  useState,
+  useCallback,
+  useMemo,
+} from "react";
 import { InitialTweets } from "../dB/tweets";
 
 const TweetContext = createContext();
@@ -78,21 +84,30 @@ export function TweetProvider({ children }) {
     });
   }, []);
 
+  const value = useMemo(() => {
+    return {
+      tweets,
+      addTweet,
+      markBookmark,
+      likeTweet,
+      addComment,
+      addCommentLike,
+      deleteTweet,
+      deleteComment,
+    };
+  }, [
+    tweets,
+    addTweet,
+    markBookmark,
+    likeTweet,
+    addComment,
+    addCommentLike,
+    deleteTweet,
+    deleteComment,
+  ]);
+
   return (
-    <TweetContext.Provider
-      value={{
-        tweets,
-        addTweet,
-        markBookmark,
-        likeTweet,
-        addComment,
-        addCommentLike,
-        deleteTweet,
-        deleteComment,
-      }}
-    >
-      {children}
-    </TweetContext.Provider>
+    <TweetContext.Provider value={value}>{children}</TweetContext.Provider>
   );
 }
 
