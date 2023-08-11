@@ -12,7 +12,7 @@ function AppLayout() {
   };
 
   return (
-    <div className="lg:mx-[28rem]">
+    <div className="lg:mx-[24rem] ">
       {isSideMenuOpen && (
         <div className="fixed inset-y-0 left-0 z-40 lg:display-none">
           <SideMenu closeSideMenu={() => setIsSideMenuOpen(false)} />

@@ -13,3 +13,10 @@ body {
   background-color: black;
   color: #fff;
 }
+
+* {
+  -ms-overflow-style: none;
+}
+::-webkit-scrollbar {
+  display: none;
+}

@@ -14,7 +14,7 @@ function Pagenotfound() {
         </Link>{" "}
         if you&apos;re up for some exploring.
       </p>
-      <img className="w-full" src={nullIsland} alt="404 page not found image" />
+      <img className="w-3/6" src={nullIsland} alt="404 page not found image" />
     </div>
   );
 }

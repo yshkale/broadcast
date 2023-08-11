@@ -3,7 +3,7 @@ import About from "../icons/about.svg";
 
 function Header({ onHamburgerClick }) {
   return (
-    <div className="sticky backdrop-blur-xl top-0 flex px-6 py-3 items-center border-b border-stone-800 z-50 lg:border-l lg:border-stone-700 lg:max-w-4xl">
+    <div className="sticky backdrop-blur-xl top-0 flex px-6 py-3 items-center border-b border-stone-800 z-50 lg:border-x lg:border-stone-700 lg:max-w-4xl">
       <img
         src={Hamburger}
         onClick={onHamburgerClick}

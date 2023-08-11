@@ -48,7 +48,7 @@ function ProfilePage() {
   }
 
   return (
-    <div className="lg:max-w-4xl lg:mx-[28rem]">
+    <div className="lg:max-w-4xl lg:mx-[24rem]">
       <div className="flex gap-8 px-6 py-2 items-center border-b border-stone-700 lg:py-4">
         <img
           className="w-5 h-5 invert cursor-pointer"
@@ -185,7 +185,7 @@ function ProfilePage() {
                   <div className="flex items-center gap-2">
                     <img
                       src={t.isLiked ? LikeFill : Like}
-                      className="w-4 h-4"
+                      className="w-4 h-4 cursor-pointer"
                       alt="like"
                       onClick={() => likeTweet(t.id)}
                     />
@@ -200,7 +200,7 @@ function ProfilePage() {
                   </div>
 
                   <img
-                    className="w-[1.1rem] invert mr-auto"
+                    className="w-[1.1rem] invert mr-auto cursor-pointer"
                     src={DeleteIcon}
                     alt="more icon"
                     onClick={() => handleDeleteTweet(t.id)}
@@ -208,7 +208,7 @@ function ProfilePage() {
 
                   <img
                     src={t.bookmark ? BookmarkFill : Bookmark}
-                    className="w-[0.9rem] h-[0.9rem] mr-2"
+                    className="w-[0.9rem] h-[0.9rem] mr-2 cursor-pointer"
                     alt="bookmark"
                     onClick={() => markBookmark(t.id)}
                   />

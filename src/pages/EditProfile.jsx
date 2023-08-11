@@ -55,7 +55,7 @@ function EditProfile() {
   }
 
   return (
-    <div className="lg:max-w-4xl lg:mx-[28rem]">
+    <div className="lg:max-w-4xl lg:mx-[24rem]">
       <div className="flex gap-8 px-6 py-3 items-center border-b border-stone-700 lg:py-6">
         <img
           className="w-5 h-5 invert cursor-pointer"
